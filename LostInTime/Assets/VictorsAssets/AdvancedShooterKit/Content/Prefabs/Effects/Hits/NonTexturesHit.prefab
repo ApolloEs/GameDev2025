@@ -1,0 +1,86 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &125948
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 449092}
+  - component: {fileID: 11409022}
+  m_Layer: 2
+  m_Name: NonTexturesHit
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &449092
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 125948}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.2, y: 0.2, z: -1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &11409022
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 125948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b26e9ea33f630274b8296ec9cd2d9bcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifetime: 3.75
+  framesX: 0
+  framesY: 0
+  generic:
+    name: 
+    hitTexture: {fileID: 0}
+    hitSound: {fileID: 8300000, guid: 41fb96244fc1c744d83c126d7207ef52, type: 3}
+    hitParticle: {fileID: 19800004, guid: f75d47c216f69494e852398568614f14, type: 2}
+  surfaces:
+  - name: Concrete
+    hitTexture: {fileID: 0}
+    hitSound: {fileID: 8300000, guid: 41fb96244fc1c744d83c126d7207ef52, type: 3}
+    hitParticle: {fileID: 19800004, guid: a63395d482778d1498318320e7db4320, type: 2}
+  - name: Gravel
+    hitTexture: {fileID: 0}
+    hitSound: {fileID: 8300000, guid: 53e170192b4f4f1469c0c557c58d7359, type: 3}
+    hitParticle: {fileID: 19800004, guid: ee67f98364cc9ea4bbccb3af2bcb74f7, type: 2}
+  - name: Metal
+    hitTexture: {fileID: 0}
+    hitSound: {fileID: 8300000, guid: cee51f92d706b354f9ff66d0d1a2e8a7, type: 3}
+    hitParticle: {fileID: 19800002, guid: 60976d5bf27e58e4cb41523131b5a80b, type: 2}
+  - name: Wood
+    hitTexture: {fileID: 0}
+    hitSound: {fileID: 8300000, guid: 8787efdc5e4e0894396075ae205e3326, type: 3}
+    hitParticle: {fileID: 19800004, guid: 9ab08095aacf1944ca4b00ddbce9c2b2, type: 2}
+  - name: Glass
+    hitTexture: {fileID: 0}
+    hitSound: {fileID: 8300000, guid: 14a458ed396995f448e72fea1acbd314, type: 3}
+    hitParticle: {fileID: 19800004, guid: f75d47c216f69494e852398568614f14, type: 2}
+  - name: Human Body
+    hitTexture: {fileID: 0}
+    hitSound: {fileID: 8300000, guid: 9c3cc0cdbdaa57b47814584206b86e25, type: 3}
+    hitParticle: {fileID: 19800000, guid: fa3615d213073df4a85c057c2e5b3891, type: 2}
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 125948}
+  m_IsPrefabParent: 1

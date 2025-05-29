@@ -1,0 +1,186 @@
+Please, always remove previous version before updating!
+
+
+//***Version 1.6.5:***//
+
+Fixes:
+- Incorrect camera shaking when looking up or down.
+- "Freezing" of weapons when firing bursts exceeding the remaining number of bullets.
+
+Improvements:
+- All animation system moved to Mecanim
+  * Removed BodyAnimation.cs, instead of this added BodyAnimator.cs
+- Updated surface detector
+- Updated setting window
+- New player body and animations for it
+- Improved algorithms of player walking, now they more accurately changes movement speed. 
+
+Changes:
+- Removed weapons camera
+  * as instead added wall detection and procedural animation
+- Removed all static fields
+- Removed all useless interfaces
+  * IFootstepSFXManager
+  * IExplosion
+  * IDamageHandler
+  * IHealth
+  * ICharacter
+- Instead, more understandable interfaces have been added 
+  * IProjectile - For custom projectiles
+  * IShell - For custom shells
+- Minor Inspector's improvements
+- Significant refactorings
+- "InfiniteAmmo" field moved to AmmoBackpack
+
+
+
+//***Version 1.6:***//
+
+Improvements:
+- Ricochet and Penetration.
+- Rewrited surface system.
+- New inspector for surface detector
+- Better mouse look.
+- More optimizations.
+
+
+
+//***Version 1.5:***//
+
+Fixes:
+- More bug fixes.
+- Bug with the window settings after rename or move a ask folder.
+- Bug with regeneration.
+
+Improvements:
+- Added more new api functions(see documentation).
+- Now SurfaceDetector can detect terrain textures.
+- Added damage indicator.
+- The InputSystem has been rewrited.
+- New camera shake algorithm.
+- Improved player prefab.
+- Improved weapon system.
+- 3D Hud.
+- Simple in game menu.
+- New Damage indication system.
+- Custom events for "npc character, player, pickup, respawn.
+- Added support Unity 5 Audio system.
+- Now, all weapons used physical projectiles(simple or ballystic).
+- Added Difficulty levels.
+- New option "Drop Chance" for set the rarity of the drop item.
+
+- Added  new classes: 
+  * Projectile.cs, 
+  * HitEffect.cs
+  * DamageInfo.cs, 
+  * DamageHandler.cs, 
+  * DamagePoint.cs
+  * Character.cs, 
+  * PlayerCharacter.cs
+  * GameSettings.cs
+  * FootstepSFXManager.cs
+  * Interfaces.cs (removed in 1.6.5)
+  * Respawner.cs
+  * MenuElements.cs, 
+  * DropdownElement.cs
+
+Changes:
+- Removed Launcher.cs, Rocket.cs, Grenade.cs, Arrow.cs.
+- PlayerInventory.cs remaned to AmmoBackpak.cs
+- Now all gui elements automatically spawned"
+
+
+
+//***Version 1.3:***//
+
+Fixes:
+- Problems with camera shake and incorrect dispersion in shotgun
+- Incorrect ceiling hiegth detection  when you need to stand up
+
+Improvements:
+- New API for configure input actions and call main gameplay functions from your code.
+- New surface detection system for spawn hit effects and play footsteps sounds
+- New Input system
+- Added  Settings Window for configure input and surface detection systems
+- Visible and animated player body
+- Added "HitSurface" int field in "Health.cs" for easily hit surface detection on player and nps unvisible colliders
+- Added "UseHeadBob" float field  in "FirstPersonController.cs" for enable/disable head bobbing effect
+- Added "PosForce" and "TiltForce" bool fields in "FirstPersonController.cs" for adjust head bobbing effect threshold
+
+Changes:
+- Removed "FootstepsSoundsManager.cs"
+- Removed "EffectsManager.cs"
+- "InputRegister.cs" renamed to "ASKInputManager.cs"
+
+
+
+//***Version 1.2:***//
+
+Fixes:
+- Pproblems with slopes, thanks Fox for reported it.
+- Player controller get stuck on walls, thanks Tayer for reported it.
+- Multiple optimizations.
+
+Improvements:
+- Added Joystick support in "InputRegister.cs"
+- Added elenemt "Ladder.cs" for climping
+- Added float field "CrouchSpeed" in "PlayerMoveController.cs"
+- Added float field "BackwardsSpeed" in "PlayerMoveController.cs"
+- Added float field "SidewaysSpeed" in "PlayerMoveController.cs"
+- Added float field "InAirSpeed" in "PlayerMoveController.cs"
+- Added float field "ClimbingSpeed" in "PlayerMoveController.cs"
+- Added Vector3 field "CameraOffset" in "FirstPersonController.cs"
+- Added array for player pain sounds in "Health.cs"
+- Added "CameraShakeRange.cs" in "WeaponBase.cs" for sets Min/Max cam shake by shots
+- Added float field "MoveSpeed" in "FirstPersonWeaponSway.cs" for weight effect of weapons 
+- Added float field "RunOffset" in "FirstPersonWeaponSway.cs" for rotate the hands with weapon while player runs
+- Added float field "+ Move" in "FirstPersonWeaponSway.cs" for sub effect of dispersion by movement
+- Added float field "+ Look" in "FirstPersonWeaponSway.cs" for  sub effect of dispersion by Looking
+- Added float field "+ Run&InAir" in "FirstPersonWeaponSway.cs" for sub effect of dispersion by runs and inAir (falling/Jumping)
+- Added float field "x Crouched" in "FirstPersonWeaponSway.cs" for  sub effect of dispersion by crouch
+- Added enum "CrosshairView" in "FirstPersonWeaponSway.cs" for sets special crosshair view mod in current weapon
+- Added pain pointer in "HudElements.cs" for show the damage direction
+- Added PainColor in "HudElements.cs" for sets the color of pain screen and pointer.
+
+Changes:
+- Rewrited "PlayerMoveController.cs" from RigidBoby to CharacterController
+- Remaned field "Have" to "Avaiable" in "WeaponsManager.cs"
+- "FirstPersonLookController.cs" renamed to "FirstPersonController.cs" and now it based on "PlayerMoveController.cs"
+- All sounds converted from .ogg to .wav
+
+
+
+//***Version 1.1:***//
+
+Fixes:
+- Weapon checked have and game start no weapon on his hand when try mouse wheel using weapon
+- Showing swap icon for keep weapon type if invectory crowded
+- Freezing palyer movement in very tight spaces
+- Not working weapon controlles in WeaponsManager.cs if player die with reloadin weapon or ironsighting
+- Bug with add FirstPersonWeaponSway component on any weapon object
+- Bug with reset weapon ironsight position if useSway = falseRun ironsightintg with reload animation playing
+- Decrementing health with "immortal=true" after falling
+- Bugs and problems with Slopes
+
+Improvements:
+- Added melee weapons
+- Added deathSound in Health.cs
+- Added "Drops After Death" list based on "ReorderableList" in Health.cs
+- Added Debris script
+- Added crowbar pickup
+- New inspector for WeaponsManager.cs and "Player Weapons" list based on "ReorderableList"
+- Added smart inspectors for all weapon types and for inventory scripts
+- Added spawned effects after arrow impact
+- Added new parameter "SlopeLimit" in "PlayerMoveController.cs" - sets limit angle.
+
+Changes:
+- Rewrite all damage system
+- Rewrite InputRegister.cs
+- Removed DestroyableObjects.cs
+- Rewrite Inspectors for pickus, FirstPersonWeaponSway, health now is supported multiple editing
+
+
+
+//***Version 1.0:***//
+
+- Initial release

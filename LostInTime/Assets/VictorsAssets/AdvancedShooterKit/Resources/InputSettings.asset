@@ -1,0 +1,135 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae6b32fc6a57b4c44a1007d46da46ea9, type: 3}
+  m_Name: InputSettings
+  m_EditorClassIdentifier: 
+  actionDatabase:
+  - name: Fire
+    type: 2
+    keys: 43010000
+    actionAxes:
+    - axisName: GP RightTrigger
+      axisSource: 1
+      threshold: 0.1
+      axisStateClamp: 0
+  - name: Zoom
+    type: 2
+    keys: 44010000
+    actionAxes:
+    - axisName: GP LeftTrigger
+      axisSource: 1
+      threshold: 0.1
+      axisStateClamp: 0
+  - name: Reload Weapon
+    type: 0
+    keys: 720000004d010000
+    actionAxes: []
+  - name: Next Firemode
+    type: 0
+    keys: 780000004e010000
+    actionAxes: []
+  - name: Next Ammotype
+    type: 0
+    keys: 7a0000004f010000
+    actionAxes: []
+  - name: To Subweapon
+    type: 0
+    keys: 7600000053010000
+    actionAxes: []
+  - name: Drop Weapon
+    type: 0
+    keys: 6a00000050010000
+    actionAxes: []
+  - name: Next Weapon
+    type: 2
+    keys: 65000000
+    actionAxes:
+    - axisName: Mouse ScrollWheel
+      axisSource: 1
+      threshold: 0
+      axisStateClamp: 1
+    - axisName: GP DPadUpDown
+      axisSource: 1
+      threshold: 0
+      axisStateClamp: 1
+  - name: Prev Weapon
+    type: 2
+    keys: 71000000
+    actionAxes:
+    - axisName: Mouse ScrollWheel
+      axisSource: 1
+      threshold: 0
+      axisStateClamp: 2
+    - axisName: GP DPadUpDown
+      axisSource: 1
+      threshold: 0
+      axisStateClamp: 2
+  - name: Use
+    type: 0
+    keys: 660000004c010000
+    actionAxes: []
+  - name: Jump
+    type: 0
+    keys: 200000004a010000
+    actionAxes: []
+  - name: Crouch
+    type: 0
+    keys: 630000004b010000
+    actionAxes: []
+  - name: Run
+    type: 0
+    keys: 3001000052010000
+    actionAxes: []
+  - name: Block Cursor
+    type: 0
+    keys: 6c000000
+    actionAxes: []
+  - name: Unblock Cursor
+    type: 0
+    keys: 6b000000
+    actionAxes: []
+  - name: Pause
+    type: 0
+    keys: 1b00000070000000
+    actionAxes: []
+  axesDatabase:
+  - name: Move Horizontal
+    type: 0
+    unityAxes:
+    - Horizontal
+    - GP LStick X
+    customKeys:
+    - negativeKey: 97
+      positiveKey: 100
+    normalize: 1
+  - name: Move Vertical
+    type: 0
+    unityAxes:
+    - Vertical
+    - GP LStick Y
+    customKeys:
+    - negativeKey: 115
+      positiveKey: 119
+    normalize: 1
+  - name: Look Horizontal
+    type: 0
+    unityAxes:
+    - Mouse X
+    - GP RStick X
+    customKeys: []
+    normalize: 0
+  - name: Look Vertical
+    type: 0
+    unityAxes:
+    - Mouse Y
+    - GP RStick Y
+    customKeys: []
+    normalize: 0
