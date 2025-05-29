@@ -119,18 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &116228618 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 11460680, guid: 18d0932b1defdbc44aae2369ae955d10,
-    type: 3}
-  m_PrefabInstance: {fileID: 1576785704}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14aa4d6924350714c94be0402b3ed4ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &218232505
 GameObject:
   m_ObjectHideFlags: 0
@@ -142,8 +130,6 @@ GameObject:
   - component: {fileID: 218232507}
   - component: {fileID: 218232506}
   - component: {fileID: 218232508}
-  - component: {fileID: 218232510}
-  - component: {fileID: 218232509}
   - component: {fileID: 218232511}
   m_Layer: 0
   m_Name: GameMaster
@@ -196,58 +182,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7780b51b60afa1c47948b66ba4fb2f00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  primaryWeaponName: Crossbow
-  secondaryWeaponName: Pistol
+  primaryWeaponName: Crossbow6
+  secondaryWeaponName: Pistol1
   ammoTypes:
   - ArrowSimple
   - PistolAmmo_9mm
   ammoAmounts: 1e00000032000000
---- !u!114 &218232509
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 218232505}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a47c2c2d7b7bbd479d409ae8a5d1906, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ammunition:
-  - name: ArrowSimpleP
-    hudIcon: {fileID: 21300000, guid: c587afbeb7a94264ca9002034e98891c, type: 3}
-    currentAmmo: 0
-    maxAmmo: 50
-  - name: PistolClip
-    hudIcon: {fileID: 21300000, guid: b2f230907b869b54cbb869d2c485dd43, type: 3}
-    currentAmmo: 0
-    maxAmmo: 20
-  infiniteAmmo: 0
---- !u!114 &218232510
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 218232505}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a46fe8926a870f469f9aef3d80d07c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxWeapons: 2
-  switchWeapon: {fileID: 0}
-  switchShootingMode: {fileID: 0}
-  subWeaponOnOff: {fileID: 0}
-  switchProjectile: {fileID: 0}
-  ironsightingMode: 2
-  weapons:
-  - available: 1
-    type: 0
-    weapon: {fileID: 291083019}
-    subWeapon: {fileID: 116228618}
-    dropout: {fileID: 0}
 --- !u!82 &218232511
 AudioSource:
   m_ObjectHideFlags: 0
@@ -345,18 +285,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &291083019 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 11468948, guid: 18d0932b1defdbc44aae2369ae955d10,
-    type: 3}
-  m_PrefabInstance: {fileID: 1576785704}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14aa4d6924350714c94be0402b3ed4ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &828843171 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 136726, guid: 18d0932b1defdbc44aae2369ae955d10,
@@ -690,6 +618,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 123476, guid: 18d0932b1defdbc44aae2369ae955d10, type: 3}
+      propertyPath: m_Name
+      value: Crossbow6
+      objectReference: {fileID: 0}
     - target: {fileID: 418408, guid: 18d0932b1defdbc44aae2369ae955d10, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.55123097
@@ -716,7 +648,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 453410, guid: 18d0932b1defdbc44aae2369ae955d10, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.412
+      value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: 453410, guid: 18d0932b1defdbc44aae2369ae955d10, type: 3}
       propertyPath: m_LocalPosition.z

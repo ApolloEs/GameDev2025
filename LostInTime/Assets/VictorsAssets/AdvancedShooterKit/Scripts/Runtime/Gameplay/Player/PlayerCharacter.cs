@@ -73,22 +73,27 @@ namespace AdvancedShooterKit
             this.getCamera = camera;
         }
 
-
-        // Take Damage
-        public override void TakeDamage( DamageInfo damageInfo )
+        public void IncreaseMaxHealth(int amount)
         {
-            hud.healthBar.SetDamageTargetPosition( damageInfo.source.position );
+            int newHealth = maxHealth + amount;
+            MaxHealth = newHealth;
+        }
+        
+        // Take Damage
+        public override void TakeDamage(DamageInfo damageInfo)
+        {
+            hud.healthBar.SetDamageTargetPosition(damageInfo.source.position);
 
-            int finalDamage = CalcDamage( damageInfo.value );
+            int finalDamage = CalcDamage(damageInfo.value);
             float shakeRange = finalDamage / 10f;
 
-            if( finalDamage < damageToPain && HealthInPercent > percentToPain )
+            if (finalDamage < damageToPain && HealthInPercent > percentToPain)
             {
-                switch( damageInfo.type )
+                switch (damageInfo.type)
                 {
                     case EDamageType.Impact:
                     case EDamageType.Melee:
-                        getCamera.ShakeOneShot( Random.Range( shakeRange, shakeRange * 1.65f ) );
+                        getCamera.ShakeOneShot(Random.Range(shakeRange, shakeRange * 1.65f));
                         hud.ShowPainScreen();
                         break;
 
@@ -98,11 +103,11 @@ namespace AdvancedShooterKit
             }
             else
             {
-                getCamera.ShakeOneShot( Random.Range( shakeRange, shakeRange * 1.65f ) );
+                getCamera.ShakeOneShot(Random.Range(shakeRange, shakeRange * 1.65f));
                 hud.ShowPainScreen();
             }
 
-            DecrementHealth( finalDamage );
+            DecrementHealth(finalDamage);
         }
 
         // DamageModifier ByDifficulty

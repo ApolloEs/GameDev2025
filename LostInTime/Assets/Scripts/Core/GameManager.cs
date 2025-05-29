@@ -38,6 +38,8 @@ public class GameManager : MonoBehaviour
     public int totalWaves = 10;
     public int currentScore = 0;
 
+    private UpgradeManager upgradeManager;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -58,6 +60,13 @@ public class GameManager : MonoBehaviour
     {
         // Initialize game in appropriate state
         ChangeState(GameState.MainMenu);
+
+        // Find or add the upgrade manager
+        upgradeManager = GetComponent<UpgradeManager>();
+        if (upgradeManager = null)
+        {
+            upgradeManager = gameObject.AddComponent<UpgradeManager>();
+        }
     }
 
     public void StartGame()
@@ -129,6 +138,9 @@ public class GameManager : MonoBehaviour
     public void WaveCompleted()
     {
         currentWave++;
+
+        // Show upgrade selection between waves
+        upgradeManager.OnWaveComplete(currentWave);
 
         if (currentWave >= totalWaves)
         {
