@@ -6,7 +6,7 @@ public class ZombieStateMachine : MonoBehaviour
     public enum ZombieState { Idle, Wander, Chase, Attack, Dead }
     private ZombieState currentState;
 
-    public Transform player;
+    public Transform playerTransform;
     public float chaseDistance = 10f;
     public float attackDistance = 2f;
     public float wanderRadius = 5f;
@@ -27,6 +27,18 @@ public class ZombieStateMachine : MonoBehaviour
         agent.stoppingDistance = 0.2f;
         currentState = ZombieState.Wander;
         timer = wanderTimer;
+        if (playerTransform == null)
+        {
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            if (player != null)
+            {
+                playerTransform = player.transform;
+            }
+            else
+            {
+                Debug.LogError("Cannot find player object. Make sure it has 'Player' tag.");
+            }
+        }
     }
 
 
@@ -34,7 +46,7 @@ public class ZombieStateMachine : MonoBehaviour
     {
         if (currentState != ZombieState.Dead)
         {
-            float distance = Vector3.Distance(transform.position, player.position);
+            float distance = Vector3.Distance(transform.position, playerTransform.position);
 
             switch (currentState)
             {
@@ -119,14 +131,14 @@ public class ZombieStateMachine : MonoBehaviour
 
     void Chase()
     {
-        float distance = Vector3.Distance(transform.position, player.position);
+        float distance = Vector3.Distance(transform.position, playerTransform.position);
 
         if (distance > attackDistance)
         {
             if (!agent.pathPending)
             {
                 agent.isStopped = false;
-                agent.SetDestination(player.position);
+                agent.SetDestination(playerTransform.position);
             }
         }
         else if (currentState != ZombieState.Attack)
@@ -144,7 +156,7 @@ public class ZombieStateMachine : MonoBehaviour
         agent.ResetPath();
         agent.isStopped = true;
 
-        Vector3 lookDirection = (player.position - transform.position).normalized;
+        Vector3 lookDirection = (playerTransform.position - transform.position).normalized;
         lookDirection.y = 0;
         if (lookDirection != Vector3.zero)
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(lookDirection), Time.deltaTime * 5f);
