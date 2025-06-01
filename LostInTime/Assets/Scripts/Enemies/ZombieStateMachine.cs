@@ -1,0 +1,203 @@
+using UnityEngine;
+using UnityEngine.AI;
+
+public class ZombieStateMachine : MonoBehaviour
+{
+    public enum ZombieState { Idle, Wander, Chase, Attack, Dead }
+    private ZombieState currentState;
+
+    public Transform player;
+    public float chaseDistance = 10f;
+    public float attackDistance = 2f;
+    public float wanderRadius = 5f;
+    public float wanderTimer = 5f;
+
+    private NavMeshAgent agent;
+    private Animator animator;
+    private float timer;
+
+    float attackCooldown = 1.5f;
+    float lastAttackTime;
+
+
+    void Start()
+    {
+        agent = GetComponent<NavMeshAgent>();
+        animator = GetComponent<Animator>();
+        agent.stoppingDistance = 0.2f;
+        currentState = ZombieState.Wander;
+        timer = wanderTimer;
+    }
+
+
+    void Update()
+    {
+        if (currentState != ZombieState.Dead)
+        {
+            float distance = Vector3.Distance(transform.position, player.position);
+
+            switch (currentState)
+            {
+                case ZombieState.Idle:
+                    Idle();
+                    if (distance <= chaseDistance)
+                        SwitchState(ZombieState.Chase);
+                    break;
+
+                case ZombieState.Wander:
+                    Wander();
+                    if (distance <= chaseDistance)
+                        SwitchState(ZombieState.Chase);
+                    break;
+
+                case ZombieState.Chase:
+                    Chase();
+                    if (distance <= attackDistance)
+                        SwitchState(ZombieState.Attack);
+                    else if (distance > chaseDistance + 3f && currentState != ZombieState.Wander)
+                        SwitchState(ZombieState.Wander);
+
+                    break;
+
+                case ZombieState.Attack:
+                    Attack();
+
+                    if (distance > attackDistance + 0.5f)
+                    {
+                        agent.isStopped = false;
+                        SwitchState(ZombieState.Attack);
+                    }
+
+                    break;
+            }
+        }
+    }
+
+    void SwitchState(ZombieState newState)
+    {
+        if (currentState == newState) return;
+        currentState = newState;
+
+        Debug.Log("Switching to: " + newState);
+
+
+        ResetAllTriggers(); // <-- Only reset ONCE when switching state
+
+        switch (newState)
+        {
+            case ZombieState.Idle:
+                animator.SetTrigger("idle");
+                break;
+            case ZombieState.Wander:
+                animator.SetTrigger("walk1");
+                break;
+            case ZombieState.Chase:
+                animator.SetTrigger("run");
+                break;
+            case ZombieState.Attack:
+                animator.SetTrigger("attack");
+                break;
+        }
+    }
+
+
+    void Idle()
+    {
+        agent.ResetPath();
+    }
+
+    void Wander()
+    {
+        timer += Time.deltaTime;
+        if (timer >= wanderTimer)
+        {
+            Vector3 newPos = RandomNavSphere(transform.position, wanderRadius, -1);
+            agent.SetDestination(newPos);
+            timer = 0;
+        }
+    }
+
+    void Chase()
+    {
+        float distance = Vector3.Distance(transform.position, player.position);
+
+        if (distance > attackDistance)
+        {
+            if (!agent.pathPending)
+            {
+                agent.isStopped = false;
+                agent.SetDestination(player.position);
+            }
+        }
+        else if (currentState != ZombieState.Attack)
+        {
+            agent.ResetPath();
+            agent.isStopped = true;
+            SwitchState(ZombieState.Attack);
+        }
+
+
+    }
+
+    void Attack()
+    {
+        agent.ResetPath();
+        agent.isStopped = true;
+
+        Vector3 lookDirection = (player.position - transform.position).normalized;
+        lookDirection.y = 0;
+        if (lookDirection != Vector3.zero)
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(lookDirection), Time.deltaTime * 5f);
+
+        if (Time.time > lastAttackTime + attackCooldown)
+        {
+            agent.isStopped = true;
+            animator.ResetTrigger("attack");
+            animator.SetTrigger("attack");
+            lastAttackTime = Time.time;
+
+            // Resume chasing slightly after attacking
+            Invoke(nameof(ResumeMovementAfterAttack), 0.6f);
+        }
+    }
+
+
+
+    public void Die(bool fallForward)
+    {
+        agent.enabled = false;
+        currentState = ZombieState.Dead;
+        ResetAllTriggers();
+        animator.SetTrigger(fallForward ? "fallforward" : "fallback");
+    }
+
+    public static Vector3 RandomNavSphere(Vector3 origin, float dist, int layermask)
+    {
+        Vector3 randDirection = Random.insideUnitSphere * dist;
+        randDirection += origin;
+        NavMeshHit navHit;
+        NavMesh.SamplePosition(randDirection, out navHit, dist, layermask);
+        return navHit.position;
+    }
+
+    void ResetAllTriggers()
+    {
+        animator.ResetTrigger("idle");
+        animator.ResetTrigger("walk");
+        animator.ResetTrigger("walk1");
+        animator.ResetTrigger("run");
+        animator.ResetTrigger("attack");
+        animator.ResetTrigger("fallforward");
+        animator.ResetTrigger("fallback");
+    }
+    
+    void ResumeMovementAfterAttack()
+    {
+        if (currentState == ZombieState.Attack)
+        {
+            agent.isStopped = false;
+            SwitchState(ZombieState.Chase);
+        }
+    }
+
+}
