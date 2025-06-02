@@ -122,9 +122,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 5
-  duration: 10
+  timeScale: 0.4
+  duration: 100
   fadeInTime: 0.5
   fadeOutTime: 0.5
+  checkInterval: 0.2
+  timeEffect: {fileID: 0}
   zoneMaterial: {fileID: 0}
   zoneColor: {r: 0.5, g: 0.8, b: 1, a: 0.2}
   startSound: {fileID: 0}

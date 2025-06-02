@@ -39,6 +39,20 @@ public class ZombieStateMachine : MonoBehaviour
         timer = wanderTimer;
 
         currentHealth = maxHealth;
+
+        if (player == null)
+        {
+            GameObject playerTransform = GameObject.FindGameObjectWithTag("Player");
+            if (playerTransform != null)
+            {
+                player = playerTransform.transform;
+            }
+            else
+            {
+                Debug.LogError("Cannot find player object. Make sure it has 'Player' tag.");
+            }
+        }
+
     }
 
 
