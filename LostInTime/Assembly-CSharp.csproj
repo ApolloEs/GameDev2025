@@ -66,10 +66,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\VictorsAssets\AdvancedShooterKit\Scripts\Runtime\Utils\ASKMath.cs" />
+    <Compile Include="Assets\Scripts\Player\TimeEffects\TimeEffectManager.cs" />
     <Compile Include="Assets\Scripts\Upgrades\WeaponUpgrade.cs" />
     <Compile Include="Assets\VictorsAssets\AdvancedShooterKit\Scripts\Runtime\Camera\CameraHeadBob.cs" />
     <Compile Include="Assets\VictorsAssets\AdvancedShooterKit\Scripts\Runtime\SurfaceDetection\CustomSurface.cs" />
+    <Compile Include="Assets\Scripts\Player\TimeEffects\TimeGrenade.cs" />
     <Compile Include="Assets\VictorsAssets\AdvancedShooterKit\Scripts\Runtime\Effects\HitEffect.cs" />
+    <Compile Include="Assets\Scripts\Player\TimeEffects\TimeEffectZone.cs" />
     <Compile Include="Assets\VictorsAssets\AdvancedShooterKit\Scripts\Runtime\Input\InputSettings.cs" />
     <Compile Include="Assets\Scripts\Enemies\ZombieStateMachine.cs" />
     <Compile Include="Assets\VictorsAssets\AdvancedShooterKit\Scripts\Runtime\Gameplay\Combat\Health.cs" />
@@ -78,6 +81,8 @@
     <Compile Include="Assets\VictorsAssets\AdvancedShooterKit\Content\_DemoScene\Scripts\ControlsHelper.cs" />
     <Compile Include="Assets\VictorsAssets\AdvancedShooterKit\Scripts\Runtime\GUI\Menu\DropdownElement.cs" />
     <Compile Include="Assets\Scripts\Enemies\ZombieDamageHandler.cs" />
+    <Compile Include="Assets\Scripts\Enemies\Enemy.cs" />
+    <Compile Include="Assets\Scripts\Player\TimeEffects\SlowTimeEffect.cs" />
     <Compile Include="Assets\VictorsAssets\AdvancedShooterKit\Scripts\Runtime\Gameplay\NPC\Character.cs" />
     <Compile Include="Assets\VictorsAssets\AdvancedShooterKit\Scripts\Runtime\Camera\PlayerCamera.cs" />
     <Compile Include="Assets\VictorsAssets\AdvancedShooterKit\Scripts\Runtime\GameData\Delegates.cs" />
@@ -91,6 +96,7 @@
     <Compile Include="Assets\VictorsAssets\AdvancedShooterKit\Scripts\Runtime\Utils\LevelCache.cs" />
     <Compile Include="Assets\VictorsAssets\AdvancedShooterKit\Scripts\Runtime\Gameplay\Respawner.cs" />
     <Compile Include="Assets\VictorsAssets\AdvancedShooterKit\Scripts\Runtime\GameData\GameSettings.cs" />
+    <Compile Include="Assets\Scripts\Player\TimeEffects\ITimeEffect.cs" />
     <Compile Include="Assets\VictorsAssets\AdvancedShooterKit\Scripts\Runtime\Effects\Shell.cs" />
     <Compile Include="Assets\VictorsAssets\AdvancedShooterKit\Scripts\Runtime\Gameplay\Player\Animation\FirstPersonWeaponSway.cs" />
     <Compile Include="Assets\VictorsAssets\AdvancedShooterKit\Scripts\Runtime\Gameplay\Player\Controllers\FirstPersonController.cs" />
@@ -109,10 +115,13 @@
     <Compile Include="Assets\Scripts\Player\TimeManipulator.cs" />
     <Compile Include="Assets\VictorsAssets\AdvancedShooterKit\Scripts\Runtime\Interfaces\IShell.cs" />
     <Compile Include="Assets\VictorsAssets\AdvancedShooterKit\Scripts\Runtime\Effects\FootstepSFXManager.cs" />
+    <Compile Include="Assets\Scripts\Enemies\ZombieCharacter.cs" />
     <Compile Include="Assets\VictorsAssets\AdvancedShooterKit\Scripts\Runtime\Interfaces\IProjectile.cs" />
     <Compile Include="Assets\VictorsAssets\AdvancedShooterKit\Scripts\Runtime\Gameplay\Combat\Projectile.cs" />
+    <Compile Include="Assets\Scripts\Enemies\WaveSpawner.cs" />
     <Compile Include="Assets\Scripts\Upgrades\Upgrade.cs" />
     <Compile Include="Assets\VictorsAssets\AdvancedShooterKit\Content\_DemoScene\Scripts\SecureCam.cs" />
+    <Compile Include="Assets\Scripts\Enemies\ZombieAttack.cs" />
     <Compile Include="Assets\VictorsAssets\AdvancedShooterKit\Scripts\Runtime\GUI\Menu\MenuElements.cs" />
     <Compile Include="Assets\VictorsAssets\AdvancedShooterKit\Scripts\Runtime\Gameplay\Player\Animation\BodyAnimator.cs" />
     <Compile Include="Assets\VictorsAssets\AdvancedShooterKit\Scripts\Runtime\Gameplay\Combat\DamagePoint.cs" />

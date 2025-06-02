@@ -28,7 +28,7 @@ namespace AdvancedShooterKit
 
 
         // Constructor
-        public DamageInfo( float value, Transform source, Character owner )
+        public DamageInfo(float value, Transform source, Character owner)
         {
             this.value = value;
             this.source = source;
@@ -36,12 +36,15 @@ namespace AdvancedShooterKit
             type = EDamageType.Unknown;
         }
         // Constructor
-        public DamageInfo( float value, Transform source, Character owner, EDamageType type )
+        public DamageInfo(float value, Transform source, Character owner, EDamageType type)
         {
             this.value = value;
             this.source = source;
             this.owner = owner;
             this.type = type;
         }
+        
+        
     };
+    
 }

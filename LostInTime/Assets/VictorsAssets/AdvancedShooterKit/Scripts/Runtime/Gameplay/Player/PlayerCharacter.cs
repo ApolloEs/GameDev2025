@@ -20,7 +20,7 @@ namespace AdvancedShooterKit
         public ASKInputManager inputManager { get; private set; }
         public HudElements hud { get; private set; }
         public PlayerCamera getCamera { get; private set; }
-        public FirstPersonController fpController { get; private set; }        
+        public FirstPersonController fpController { get; private set; }
         public WeaponsManager weaponsManager { get; private set; }
         public AmmoBackpack ammoBackpack { get; private set; }
 
@@ -31,18 +31,18 @@ namespace AdvancedShooterKit
             base.Awake();
 
             inputManager = GetComponent<ASKInputManager>();
-            fpController = GetComponent<FirstPersonController>();            
-            weaponsManager = GetComponentInChildren<WeaponsManager>( true );
+            fpController = GetComponent<FirstPersonController>();
+            weaponsManager = GetComponentInChildren<WeaponsManager>(true);
             ammoBackpack = weaponsManager.GetComponent<AmmoBackpack>();
         }
 
         // Start
         protected override void Start()
         {
-            hud.healthBar.UpdateBar( currentHealth, maxHealth );
+            hud.healthBar.UpdateBar(currentHealth, maxHealth);
             ECrosshair.EView view;
-            hud.crosshair.SetPointSprite( weaponsManager.GetCurrentWeaponPointMode( out view ) );
-            hud.crosshair.SetActive( view );
+            hud.crosshair.SetPointSprite(weaponsManager.GetCurrentWeaponPointMode(out view));
+            hud.crosshair.SetActive(view);
             base.Start();
         }
 
@@ -50,25 +50,25 @@ namespace AdvancedShooterKit
         protected override void OnEnable()
         {
             base.OnEnable();
-            hud.SetActive( GameSettings.ShowHud );
+            hud.SetActive(GameSettings.ShowHud);
         }
 
         // OnDisable
         protected override void OnDisable()
         {
             base.OnDisable();
-            hud.SetActive( false );
+            hud.SetActive(false);
         }
 
 
         // SetHud
-        internal void SetHud( HudElements hud )
+        internal void SetHud(HudElements hud)
         {
             this.hud = hud;
         }
 
         // SetCamera
-        internal void SetCamera( PlayerCamera camera )
+        internal void SetCamera(PlayerCamera camera)
         {
             this.getCamera = camera;
         }
@@ -78,7 +78,7 @@ namespace AdvancedShooterKit
             int newHealth = maxHealth + amount;
             MaxHealth = newHealth;
         }
-        
+
         // Take Damage
         public override void TakeDamage(DamageInfo damageInfo)
         {
@@ -115,12 +115,12 @@ namespace AdvancedShooterKit
         {
             get
             {
-                switch( GameSettings.DifficultyLevel )
+                switch (GameSettings.DifficultyLevel)
                 {
-                    case EDifficultyLevel.Easy:    return .7f;
-                    case EDifficultyLevel.Normal:  return 1f;
-                    case EDifficultyLevel.Hard:    return 1.2f;
-                    case EDifficultyLevel.Delta:   return 1.35f;
+                    case EDifficultyLevel.Easy: return .7f;
+                    case EDifficultyLevel.Normal: return 1f;
+                    case EDifficultyLevel.Hard: return 1.2f;
+                    case EDifficultyLevel.Delta: return 1.35f;
                     case EDifficultyLevel.Extreme: return 1.5f;
                     default: return 1f;
                 }
@@ -129,44 +129,45 @@ namespace AdvancedShooterKit
 
 
         // Increment Health
-        public override bool IncrementHealth( int addАmount )
+        public override bool IncrementHealth(int addАmount)
         {
-            bool result = base.IncrementHealth( addАmount );
+            bool result = base.IncrementHealth(addАmount);
 
-            if( result )
-                hud.healthBar.UpdateBar( currentHealth, maxHealth );
+            if (result)
+                hud.healthBar.UpdateBar(currentHealth, maxHealth);
 
             return result;
         }
 
         // Decrement Health
-        public override bool DecrementHealth( int damage )
+        public override bool DecrementHealth(int damage)
         {
-            bool result = base.DecrementHealth( damage );
+            bool result = base.DecrementHealth(damage);
 
-            if( result )
-                hud.healthBar.UpdateBar( currentHealth, maxHealth );
+            if (result)
+                hud.healthBar.UpdateBar(currentHealth, maxHealth);
 
             return result;
-        }        
+        }
 
 
         // OnDie
         protected override void OnDie()
         {
             base.OnDie();
-            
+
             enabled = false;
             getCamera.PlayerDie();
             hud.PlayerDie();
             fpController.PlayerDie();
 
-            foreach( Transform child in getCamera.getTransform ) {
-                child.gameObject.SetActive( false );
-            }                
+            foreach (Transform child in getCamera.getTransform)
+            {
+                child.gameObject.SetActive(false);
+            }
 
             var bAnim = GetComponentInChildren<BodyAnimator>();
-            if( bAnim != null ) bAnim.gameObject.SetActive( false );
+            if (bAnim != null) bAnim.gameObject.SetActive(false);
 
             // Show menu after die.
             inputManager.PlayerDie();
