@@ -6,10 +6,11 @@ public class PlayerEquipmentInitializer : MonoBehaviour
     [Header("Startup Weapons")]
     [SerializeField] private string primaryWeaponName = "Crossbow6";
     [SerializeField] private string secondaryWeaponName = "Pistol1";
+    [SerializeField] private string grenade = "HandGranade4";
 
     [Header("Startup Ammo")]
-    [SerializeField] private string[] ammoTypes = { "ArrowSimple", "PistolAmmo_9mm" };
-    [SerializeField] private int[] ammoAmounts = { 30, 10 };
+    [SerializeField] private string[] ammoTypes = { "ArrowSimple", "PistolAmmo_9mm", "FragGrenade" };
+    [SerializeField] private int[] ammoAmounts = { 30, 10, 5 };
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -40,6 +41,7 @@ public class PlayerEquipmentInitializer : MonoBehaviour
         // Give weapons
         GiveWeapon(weaponsManager, primaryWeaponName);
         GiveWeapon(weaponsManager, secondaryWeaponName);
+        GiveWeapon(weaponsManager, grenade);
 
         // Add ammo
         for (int i = 0; i < ammoTypes.Length; i++)

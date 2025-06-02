@@ -16,7 +16,7 @@ public class SlowTimeEffect : MonoBehaviour, ITimeEffect
         return new Color(0.5f, 0.8f, 1f, 0.3f);
     }
 
-    public void ApplyToRigidBody(Rigidbody rb)
+    public void ApplyToRigidbody(Rigidbody rb)
     {
         // Skip if this object shouldnt be affected
         if (!ShouldAffectObject(rb.gameObject))

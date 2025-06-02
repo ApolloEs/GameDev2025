@@ -609,9 +609,10 @@ GameObject:
   - component: {fileID: 628677586934528012}
   - component: {fileID: 2906448095468095943}
   - component: {fileID: 1483592881292801627}
+  - component: {fileID: -8371173759007461079}
   m_Layer: 0
   m_Name: Zombie1
-  m_TagString: Untagged
+  m_TagString: Zombie
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -716,7 +717,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba5a7b9486b97fd40ab4c0d906efcb2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  playerTransform: {fileID: 0}
   chaseDistance: 10
   attackDistance: 1
   wanderRadius: 5
@@ -734,6 +735,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
+--- !u!136 &-8371173759007461079
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1301008848973811945}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.1913571
+  m_Height: 2.281523
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.6407613, z: -0.001976967}
 --- !u!1 &1425691102198455531
 GameObject:
   m_ObjectHideFlags: 0
