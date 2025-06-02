@@ -5,6 +5,8 @@ public class ZombieStateMachine : MonoBehaviour
 {
     public enum ZombieState { Idle, Wander, Chase, Attack, Dead }
     private ZombieState currentState;
+    public int CurrentHealth => currentHealth;
+
 
     public Transform player;
     public float chaseDistance = 10f;
@@ -19,6 +21,9 @@ public class ZombieStateMachine : MonoBehaviour
     float attackCooldown = 1.5f;
     float lastAttackTime;
 
+    public int maxHealth = 100;
+    private int currentHealth;
+
 
     void Start()
     {
@@ -27,6 +32,8 @@ public class ZombieStateMachine : MonoBehaviour
         agent.stoppingDistance = 0.2f;
         currentState = ZombieState.Wander;
         timer = wanderTimer;
+
+        currentHealth = maxHealth;
     }
 
 
@@ -167,6 +174,7 @@ public class ZombieStateMachine : MonoBehaviour
     {
         agent.enabled = false;
         currentState = ZombieState.Dead;
+
         ResetAllTriggers();
         animator.SetTrigger(fallForward ? "fallforward" : "fallback");
     }
@@ -190,13 +198,28 @@ public class ZombieStateMachine : MonoBehaviour
         animator.ResetTrigger("fallforward");
         animator.ResetTrigger("fallback");
     }
-    
+
     void ResumeMovementAfterAttack()
     {
         if (currentState == ZombieState.Attack)
         {
             agent.isStopped = false;
             SwitchState(ZombieState.Chase);
+        }
+    }
+
+    public void TakeDamage(int damage, Vector3 hitDirection)
+    {
+        if (currentState == ZombieState.Dead)
+            return;
+
+        currentHealth -= damage;
+        Debug.Log("Zombie took damage! Health now: " + currentHealth);
+
+        if (currentHealth <= 0)
+        {
+            bool fallForward = Vector3.Dot(transform.forward, hitDirection) > 0;
+            Die(fallForward);
         }
     }
 

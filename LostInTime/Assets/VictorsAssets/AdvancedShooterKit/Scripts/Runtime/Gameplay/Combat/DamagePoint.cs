@@ -14,7 +14,11 @@ namespace AdvancedShooterKit
     {
         [SerializeField, Range( 0f, 10f )]
         private float damageModifier = 1f;
-
+        
+        public DamageHandler owner;
+        public float damage;
+        public Vector3 hitPoint;
+        public Vector3 direction;
 
         public override DamageInfo lastDamage { get { return checkHealth ? m_Health.lastDamage : new DamageInfo(); } }
 
