@@ -23,6 +23,11 @@ public class ZombieStateMachine : MonoBehaviour
 
     public int maxHealth = 100;
     private int currentHealth;
+    // Variables for time manipulation
+    private float originalNavSpeed;
+    private float originalNavAngularSpeed;
+    private float originalAttackCooldown;
+    private bool isSlowed = false;
 
 
     void Start()
@@ -223,4 +228,53 @@ public class ZombieStateMachine : MonoBehaviour
         }
     }
 
+
+    // Time Manipulation methods
+    public void ApplyTimeEffect(float timeScale)
+    {
+        if (!isSlowed)
+        {
+            // Store original values
+            originalNavSpeed = agent.speed;
+            originalNavAngularSpeed = agent.angularSpeed;
+            originalAttackCooldown = attackCooldown;
+
+            isSlowed = true;
+        }
+
+        // Apply slowdown to NavMeshAgent
+        agent.speed = originalNavSpeed * timeScale;
+        agent.angularSpeed = originalNavAngularSpeed * timeScale;
+
+        // Slow down the animator
+        if (animator != null)
+        {
+            animator.speed = timeScale;
+        }
+
+        // Extend cooldowns
+        attackCooldown = originalAttackCooldown / timeScale;
+
+        Debug.Log($"Zombie slowed down to {timeScale} of original speed");
+    }
+
+    public void RemoveTimeEffect()
+    {
+        if (isSlowed)
+        {
+            // Restore original values
+            agent.speed = originalNavSpeed;
+            agent.angularSpeed = originalNavAngularSpeed;
+            attackCooldown = originalAttackCooldown;
+
+            // Reset animator
+            if (animator != null)
+            {
+                animator.speed = 1.0f;
+            }
+
+            isSlowed = false;
+            Debug.Log("Zombie return to normal speed");
+        }
+    }
 }
