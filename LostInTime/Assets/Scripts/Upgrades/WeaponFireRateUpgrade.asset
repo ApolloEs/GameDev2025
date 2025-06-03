@@ -10,11 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 351ff16c608a05d4cb63d603907758ca, type: 3}
-  m_Name: DamageUpgrade
+  m_Name: WeaponFireRateUpgrade
   m_EditorClassIdentifier: 
-  upgradeName: 
-  description: 
+  upgradeName: Fire Rate Upgrade
+  description: Increases all weapon fire rate
   icon: {fileID: 0}
   cost: 100
-  upgradeType: 0
+  upgradeType: 1
   upgradeAmount: 10
+  maxLevel: 10
+  upgradeScaling: 1

@@ -44,7 +44,7 @@ namespace AdvancedShooterKit
         }
 
         [SerializeField]
-        private int regAmount = 1;
+        protected int regAmount = 1;
         public int RegAmount
         {
             get { return regAmount; }
@@ -60,7 +60,7 @@ namespace AdvancedShooterKit
         }
 
         [SerializeField]
-        private float regInterval = 1.25f;
+        protected float regInterval = 1.25f;
         public float RegInterval
         {
             get { return regInterval; }

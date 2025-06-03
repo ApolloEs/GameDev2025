@@ -85,7 +85,7 @@ public class TimeManipulator : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -202,10 +202,10 @@ public class TimeManipulator : MonoBehaviour
         }
 
         // Restore weapon sway
-            if (weaponSway != null)
-            {
-                weaponSway.moveSpeed = originalWeaponSwaySpeed;
-            }
+        if (weaponSway != null)
+        {
+            weaponSway.moveSpeed = originalWeaponSwaySpeed;
+        }
 
         // Restore animator speed
         if (playerAnimator != null)
@@ -251,5 +251,10 @@ public class TimeManipulator : MonoBehaviour
     {
         cooldownDuration -= reductionAmount;
         cooldownDuration = Mathf.Max(3f, cooldownDuration); // ensure cd always > 3sec
+    }
+
+    public void IncreaseSlowdownFactor(float ammount)
+    {
+        slowdownFactor = Mathf.Clamp(slowdownFactor + ammount, 0.1f, 0.9f);
     }
 }

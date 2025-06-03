@@ -79,6 +79,18 @@ namespace AdvancedShooterKit
             MaxHealth = newHealth;
         }
 
+        public void increaseRegenAmount(int amount)
+        {
+            int newRegen = regAmount + amount;
+            RegAmount = newRegen;
+        }
+
+        public void decreaseRegenInterval(float amount)
+        {
+            float newRegenInterval = regInterval - amount;
+            RegInterval = newRegenInterval;
+        }
+
         // Take Damage
         public override void TakeDamage(DamageInfo damageInfo)
         {

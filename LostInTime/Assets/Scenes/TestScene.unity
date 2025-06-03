@@ -190,6 +190,7 @@ GameObject:
   - component: {fileID: 218232511}
   - component: {fileID: 218232512}
   - component: {fileID: 218232513}
+  - component: {fileID: 218232514}
   m_Layer: 0
   m_Name: GameMaster
   m_TagString: Untagged
@@ -388,6 +389,29 @@ MonoBehaviour:
   timeSlowColor: {r: 0.5, g: 0.8, b: 1, a: 1}
   timeSlowSound: {fileID: 8300000, guid: 8a608f17acfc7a04eaff27f1865948da, type: 3}
   timeResumeSound: {fileID: 0}
+--- !u!114 &218232514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 218232505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3d3c66aa1ea1554ea987890875fe64b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  availableUpgrades:
+  - {fileID: 11400000, guid: 677d789e9623be14abb05e82f7e9ca1b, type: 2}
+  - {fileID: 11400000, guid: 63a0d34e269dc204bb6b89743bf0ecb3, type: 2}
+  - {fileID: 11400000, guid: 28f9d32ddeaca2d4ca604e9831afce1f, type: 2}
+  - {fileID: 11400000, guid: d643d399e3175714d85d29b231b08b1e, type: 2}
+  - {fileID: 11400000, guid: 9dc2754b2b2a05340b3f94479982238a, type: 2}
+  - {fileID: 11400000, guid: f12c7244c639d4f40ac7285101e610d5, type: 2}
+  - {fileID: 11400000, guid: d8fe2dae034d87044a36faddd5dda608, type: 2}
+  upgradesPerSelection: 3
+  playerPoints: 10000
+  testUpgradeKey: 117
 --- !u!114 &828843186 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 11409660, guid: 18d0932b1defdbc44aae2369ae955d10,
@@ -999,6 +1023,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11409660, guid: 18d0932b1defdbc44aae2369ae955d10, type: 3}
+      propertyPath: regDelay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11409660, guid: 18d0932b1defdbc44aae2369ae955d10, type: 3}
+      propertyPath: regInterval
+      value: 0.53
+      objectReference: {fileID: 0}
     - target: {fileID: 11414310, guid: 18d0932b1defdbc44aae2369ae955d10, type: 3}
       propertyPath: maxWeapons
       value: 3
@@ -1279,3 +1311,4 @@ SceneRoots:
   - {fileID: 1359849032}
   - {fileID: 116180579}
   - {fileID: 2035158112}
+  - {fileID: 7793140961694555208}

@@ -81,6 +81,6 @@ public class ZombieDamageHandler : DamageHandler
             Debug.Log("No ZombieDamageHandler found on: " + hitInfo.collider.name);
         }
 
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 }
