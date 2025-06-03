@@ -10,6 +10,8 @@ TagManager:
   - matMetal
   - NonPlayerCharacter
   - Projectile
+  - Zombie
+  - Head
   layers:
   - Default
   - TransparentFX
