@@ -9,7 +9,7 @@ public class PlayerEquipmentInitializer : MonoBehaviour
     [SerializeField] private string grenade = "HandGranade4";
 
     [Header("Startup Ammo")]
-    [SerializeField] private string[] ammoTypes = { "ArrowSimple", "PistolAmmo_9mm", "FragGrenade" };
+    [SerializeField] private string[] ammoTypes = { "ArrowSimple", "PistolAmmo_9mm", "ThrowFragGrenade" };
     [SerializeField] private int[] ammoAmounts = { 30, 10, 5 };
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

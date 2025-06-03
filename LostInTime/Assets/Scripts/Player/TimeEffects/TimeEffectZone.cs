@@ -190,7 +190,6 @@ public class TimeEffectZone : MonoBehaviour
 
         foreach (Collider col in colliders)
         {
-            Debug.Log($"[TimeEffectZone] Found in sphere: {col.name}, Tag: {col.tag}");
             if (col.CompareTag("Zombie"))
             {
                 ZombieStateMachine zombie = col.GetComponent<ZombieStateMachine>();
@@ -200,7 +199,6 @@ public class TimeEffectZone : MonoBehaviour
 
                     if (!affectedZombies.Contains(zombie))
                     {
-                        Debug.Log("Applying effect to zombie");
                         zombie.ApplyTimeEffect(timeScale);
                         affectedZombies.Add(zombie);
                     }

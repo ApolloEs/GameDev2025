@@ -483,7 +483,7 @@ namespace AdvancedShooterKit
                 Debug.Log("No DamageHandler found on: " + collision.collider.name);
             }
 
-            Destroy(gameObject);
+            //Destroy(gameObject);
 
 
 

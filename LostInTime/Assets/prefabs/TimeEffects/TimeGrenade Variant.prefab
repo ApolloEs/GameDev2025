@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TimeGrenade Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 7242a3a2be95aa249adb1f27d4d1fc4b, type: 3}
+      propertyPath: m_TagString
+      value: Projectile
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 7242a3a2be95aa249adb1f27d4d1fc4b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -54,7 +58,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 11420260, guid: 7242a3a2be95aa249adb1f27d4d1fc4b, type: 3}
       propertyPath: lifetime
-      value: 15
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 11420260, guid: 7242a3a2be95aa249adb1f27d4d1fc4b, type: 3}
       propertyPath: explosionObject
