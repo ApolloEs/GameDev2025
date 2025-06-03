@@ -473,6 +473,14 @@ namespace AdvancedShooterKit
 
             DamageHandler damageHandler = collision.collider.GetComponentInParent<DamageHandler>();
 
+            ZombieDamageHandler handler = collision.collider.GetComponentInParent<ZombieDamageHandler>();
+
+            if (handler != null)
+            {
+                handler.TakeDamage(damageInfo);
+            }
+
+
             if (damageHandler != null)
             {
                 damageHandler.TakeDamage(damageInfo);
