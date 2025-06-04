@@ -754,6 +754,20 @@ MonoBehaviour:
   armorType: 0
   surfaceType: 
   zombie: {fileID: 2906448095468095943}
+  bloodEffectPrefab: {fileID: 6106773765424572122, guid: 9f40f7b9c6aff9841beac0b780e5d8db,
+    type: 3}
+  bloodSpawnPoints:
+  - {fileID: 6588807832910865005}
+  - {fileID: 7231682754354437328}
+  - {fileID: 7256412235300503908}
+  - {fileID: 8178954326887748702}
+  - {fileID: 4096766886239696692}
+  - {fileID: 3333738247100250468}
+  - {fileID: 2152284914520328961}
+  - {fileID: 8833142182954164651}
+  - {fileID: 8505165566559464705}
+  headshotExplosionPrefab: {fileID: 5641732796337192638, guid: 81d61c75773586544a193949bb83d46d,
+    type: 3}
 --- !u!136 &787258997031996302
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -773,10 +787,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.3718238
-  m_Height: 2.3122814
+  m_Radius: 0.32677794
+  m_Height: 2.3646698
   m_Direction: 1
-  m_Center: {x: 0, y: 0.6561407, z: -0.12817621}
+  m_Center: {x: 0, y: 0.63411474, z: -0.08313036}
 --- !u!114 &8943915317142967552
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2125,9 +2139,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1942887658170128041}
   - component: {fileID: 360141340215786727}
+  - component: {fileID: 2972820277242028731}
   m_Layer: 11
   m_Name: Z_Head
-  m_TagString: Untagged
+  m_TagString: Head
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2213,6 +2228,27 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.13655424, y: 0.08126316, z: 0.000000037252903}
     m_Extent: {x: 0.15378535, y: 0.12076975, z: 0.08768331}
   m_DirtyAABB: 0
+--- !u!135 &2972820277242028731
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5766128375352641283}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.15378536
+  m_Center: {x: -0.000000046940226, y: -0.017403707, z: 1.6408842}
 --- !u!1 &5919653650707805504
 GameObject:
   m_ObjectHideFlags: 0

@@ -471,27 +471,32 @@ namespace AdvancedShooterKit
         {
             Debug.Log("Projectile Hit: " + collision.collider.name);
 
-            DamageHandler damageHandler = collision.collider.GetComponentInParent<DamageHandler>();
+            bool isHeadshot = collision.collider.CompareTag("Head");
 
             ZombieDamageHandler handler = collision.collider.GetComponentInParent<ZombieDamageHandler>();
 
             if (handler != null)
             {
-                handler.TakeDamage(damageInfo);
+                float damage = isHeadshot ? 50f : 15;
+
+                DamageInfo dmgInfo = new DamageInfo(
+                    value: 15f,
+                    source: transform,
+                    owner: null, // Optional attacker Character
+                    type: EDamageType.Impact
+                );
+
+                handler.TakeDamage(dmgInfo);
+                Debug.Log(isHeadshot ? "HEADSHOT!" : "Zombie hit!");
+
+                if (isHeadshot && handler.headshotExplosionPrefab != null)
+                {
+                    // Spawn head explosion effect
+                    Instantiate(handler.headshotExplosionPrefab, collision.contacts[0].point, Quaternion.identity);
+                }
             }
 
 
-            if (damageHandler != null)
-            {
-                damageHandler.TakeDamage(damageInfo);
-                Debug.Log("Damage applied via DamageHandler to: " + collision.collider.name);
-            }
-            else
-            {
-                Debug.Log("No DamageHandler found on: " + collision.collider.name);
-            }
-
-            //Destroy(gameObject);
 
 
 

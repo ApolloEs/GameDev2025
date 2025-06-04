@@ -5,6 +5,8 @@ public class ZombieDamageHandler : DamageHandler
 {
     public ZombieStateMachine zombie;
     public GameObject bloodEffectPrefab;
+    public Transform[] bloodSpawnPoints;
+    public GameObject headshotExplosionPrefab;
 
     void Awake()
     {
@@ -18,33 +20,35 @@ public class ZombieDamageHandler : DamageHandler
 
     public override void TakeDamage(DamageInfo damageInfo)
     {
-
-        if (damageInfo.source != null && bloodEffectPrefab != null)
+        if (bloodEffectPrefab != null && bloodSpawnPoints.Length > 0)
         {
-            // Determine hit position
-            Vector3 hitPos = transform.position + Vector3.up; // Or use actual hit position if available
+            Transform randomPoint = bloodSpawnPoints[Random.Range(0, bloodSpawnPoints.Length)];
 
-            // Instantiate blood effect
-            GameObject bloodFX = Instantiate(bloodEffectPrefab, hitPos, Quaternion.identity);
+            GameObject bloodFX = Instantiate(bloodEffectPrefab, randomPoint.position, Quaternion.identity);
+            bloodFX.transform.SetParent(randomPoint);
 
-            // Make the blood stick to the zombie
-            bloodFX.transform.SetParent(this.transform);
 
-            // Optionally rotate to face attacker
-            Vector3 dirToAttacker = (damageInfo.source.position - transform.position).normalized;
-            bloodFX.transform.rotation = Quaternion.LookRotation(dirToAttacker);
+            if (damageInfo.source != null)
+            {
+                Vector3 dirToAttacker = (damageInfo.source.position - transform.position).normalized;
+                bloodFX.transform.rotation = Quaternion.LookRotation(dirToAttacker);
+            }
         }
+
+        int amount = Mathf.RoundToInt(damageInfo.value);
         
-        base.TakeDamage(damageInfo);
+        Vector3 direction = (damageInfo.source != null)
+            ? (transform.position - damageInfo.source.position).normalized
+            : Vector3.back;
 
-        bool hasValidLastDamage = lastDamage.owner != null;
-
+        zombie?.TakeDamage(amount, direction); 
         
-        float amount = hasValidLastDamage ? GetDamageFromLastDamage() : 10f;
-        Vector3 direction = hasValidLastDamage ? GetDirectionFromLastDamage() : Vector3.back;
-
-        if (zombie != null)
-            zombie.TakeDamage(Mathf.RoundToInt(amount), direction);
+        AdvancedShooterKit.HudElements hud = GameObject.FindObjectOfType<AdvancedShooterKit.HudElements>();
+        
+        if (hud != null)
+        {
+            hud.ShowDamegeIndicator();
+        }
     }
 
     // Helper methods assuming we can't directly access damageInfo.damage
