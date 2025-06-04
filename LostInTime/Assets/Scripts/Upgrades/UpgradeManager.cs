@@ -9,6 +9,14 @@ public class UpgradeManager : MonoBehaviour
     [SerializeField] private int upgradesPerSelection = 3;
     [SerializeField] private int playerPoints = 0;
 
+    [Header("Experience System")]
+    [SerializeField] private int pointsPerKill = 50;
+    [SerializeField] private int currentKills = 0;
+    [SerializeField] private int totalKills = 0;
+    [SerializeField] private int[] killsRequiredForUpgrade = new int[] { 1, 3, 4, 5, 7, 10, 13, 15, 20, 30, 40, 50 };
+    [SerializeField] private int currentKillThresholdIndex = 0;
+    [SerializeField] private float experienceProgress = 0f; // 0-1 for UI display
+
     [Header("Testing")]
     [SerializeField] private KeyCode testUpgradeKey = KeyCode.U;
 
@@ -20,6 +28,13 @@ public class UpgradeManager : MonoBehaviour
     private void Start()
     {
         playerObject = FindObjectOfType<PlayerCharacter>().gameObject;
+
+        // Subscribe to enemy death events
+        WaveSpawner waveSpawner = FindObjectOfType<WaveSpawner>();
+        if (waveSpawner != null)
+        {
+            waveSpawner.onEnemyKilled.AddListener(OnEnemyKilled);
+        }
     }
 
     // Update is called once per frame
@@ -28,6 +43,58 @@ public class UpgradeManager : MonoBehaviour
         if (Input.GetKeyDown(testUpgradeKey))
         {
             ShowUpgradesSelection();
+        }
+    }
+
+    // Called when an enemy is killed
+    public void OnEnemyKilled(int pointValue)
+    {
+        // Award points
+        AddPoints(pointsPerKill);
+
+        // Update kill counters
+        currentKills++;
+        totalKills++;
+
+        // Check if player earned an experience upgrade
+        CheckExperienceUpgrade();
+    }
+
+    private void CheckExperienceUpgrade()
+    {
+        int requiredKills = killsRequiredForUpgrade[Mathf.Min(currentKillThresholdIndex, 11)];
+
+        if (currentKills >= requiredKills)
+        {
+            // Reset kill counter for next threshold
+            currentKills = 0;
+
+            // Move to next threshold
+            currentKillThresholdIndex++;
+
+            // Grant upgrade
+            ShowUpgradesSelection();
+        }
+    }
+
+    private int GetNextKillThreshold()
+    {
+        if (currentKillThresholdIndex >= killsRequiredForUpgrade.Length) return 11; // Last threshold
+
+        return killsRequiredForUpgrade[currentKillThresholdIndex];
+    }
+
+    private void UpdateExperienceUI()
+    {
+        // Calculate progress towards next update
+        if (currentKillThresholdIndex < killsRequiredForUpgrade.Length)
+        {
+            int requiredKills = killsRequiredForUpgrade[currentKillThresholdIndex];
+            experienceProgress = (float)currentKills / requiredKills;
+        }
+        else
+        {
+            experienceProgress = 1f;
         }
     }
 

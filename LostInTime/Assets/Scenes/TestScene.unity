@@ -306,6 +306,15 @@ MonoBehaviour:
   - waveName: Wave1
     enemies:
     - {fileID: 1483592881292801627, guid: 01f8a697727b77e44ad2b28c170a5290, type: 3}
+    - {fileID: 1483592881292801627, guid: 01f8a697727b77e44ad2b28c170a5290, type: 3}
+    - {fileID: 1483592881292801627, guid: 01f8a697727b77e44ad2b28c170a5290, type: 3}
+    - {fileID: 1483592881292801627, guid: 01f8a697727b77e44ad2b28c170a5290, type: 3}
+    - {fileID: 1483592881292801627, guid: 01f8a697727b77e44ad2b28c170a5290, type: 3}
+    - {fileID: 1483592881292801627, guid: 01f8a697727b77e44ad2b28c170a5290, type: 3}
+    - {fileID: 1483592881292801627, guid: 01f8a697727b77e44ad2b28c170a5290, type: 3}
+    - {fileID: 1483592881292801627, guid: 01f8a697727b77e44ad2b28c170a5290, type: 3}
+    - {fileID: 1483592881292801627, guid: 01f8a697727b77e44ad2b28c170a5290, type: 3}
+    - {fileID: 1483592881292801627, guid: 01f8a697727b77e44ad2b28c170a5290, type: 3}
     timeToNextEnemy: 1
     timeToNextWave: 10
     useRandomSpawnPoints: 0
@@ -315,20 +324,55 @@ MonoBehaviour:
     enemies:
     - {fileID: 1483592881292801627, guid: 01f8a697727b77e44ad2b28c170a5290, type: 3}
     - {fileID: 1483592881292801627, guid: 01f8a697727b77e44ad2b28c170a5290, type: 3}
-    timeToNextEnemy: 1
-    timeToNextWave: 10
-    useRandomSpawnPoints: 0
-    randomSpawnRadius: 3.9
-    enemiesLeft: 0
-  - waveName: Wave3
-    enemies:
+    - {fileID: 1483592881292801627, guid: 01f8a697727b77e44ad2b28c170a5290, type: 3}
+    - {fileID: 1483592881292801627, guid: 01f8a697727b77e44ad2b28c170a5290, type: 3}
+    - {fileID: 1483592881292801627, guid: 01f8a697727b77e44ad2b28c170a5290, type: 3}
+    - {fileID: 1483592881292801627, guid: 01f8a697727b77e44ad2b28c170a5290, type: 3}
+    - {fileID: 1483592881292801627, guid: 01f8a697727b77e44ad2b28c170a5290, type: 3}
+    - {fileID: 1483592881292801627, guid: 01f8a697727b77e44ad2b28c170a5290, type: 3}
+    - {fileID: 1483592881292801627, guid: 01f8a697727b77e44ad2b28c170a5290, type: 3}
+    - {fileID: 1483592881292801627, guid: 01f8a697727b77e44ad2b28c170a5290, type: 3}
+    - {fileID: 1483592881292801627, guid: 01f8a697727b77e44ad2b28c170a5290, type: 3}
+    - {fileID: 1483592881292801627, guid: 01f8a697727b77e44ad2b28c170a5290, type: 3}
     - {fileID: 1483592881292801627, guid: 01f8a697727b77e44ad2b28c170a5290, type: 3}
     - {fileID: 1483592881292801627, guid: 01f8a697727b77e44ad2b28c170a5290, type: 3}
     - {fileID: 1483592881292801627, guid: 01f8a697727b77e44ad2b28c170a5290, type: 3}
     timeToNextEnemy: 1
     timeToNextWave: 10
     useRandomSpawnPoints: 1
-    randomSpawnRadius: 3.9
+    randomSpawnRadius: 2.6
+    enemiesLeft: 0
+  - waveName: Wave3
+    enemies:
+    - {fileID: 1483592881292801627, guid: 01f8a697727b77e44ad2b28c170a5290, type: 3}
+    - {fileID: 1483592881292801627, guid: 01f8a697727b77e44ad2b28c170a5290, type: 3}
+    - {fileID: 1483592881292801627, guid: 01f8a697727b77e44ad2b28c170a5290, type: 3}
+    - {fileID: 1483592881292801627, guid: 01f8a697727b77e44ad2b28c170a5290, type: 3}
+    - {fileID: 1483592881292801627, guid: 01f8a697727b77e44ad2b28c170a5290, type: 3}
+    - {fileID: 1483592881292801627, guid: 01f8a697727b77e44ad2b28c170a5290, type: 3}
+    - {fileID: 1483592881292801627, guid: 01f8a697727b77e44ad2b28c170a5290, type: 3}
+    - {fileID: 1483592881292801627, guid: 01f8a697727b77e44ad2b28c170a5290, type: 3}
+    - {fileID: 1483592881292801627, guid: 01f8a697727b77e44ad2b28c170a5290, type: 3}
+    - {fileID: 1483592881292801627, guid: 01f8a697727b77e44ad2b28c170a5290, type: 3}
+    - {fileID: 1483592881292801627, guid: 01f8a697727b77e44ad2b28c170a5290, type: 3}
+    - {fileID: 1483592881292801627, guid: 01f8a697727b77e44ad2b28c170a5290, type: 3}
+    - {fileID: 1483592881292801627, guid: 01f8a697727b77e44ad2b28c170a5290, type: 3}
+    - {fileID: 1483592881292801627, guid: 01f8a697727b77e44ad2b28c170a5290, type: 3}
+    - {fileID: 1483592881292801627, guid: 01f8a697727b77e44ad2b28c170a5290, type: 3}
+    - {fileID: 1483592881292801627, guid: 01f8a697727b77e44ad2b28c170a5290, type: 3}
+    - {fileID: 1483592881292801627, guid: 01f8a697727b77e44ad2b28c170a5290, type: 3}
+    - {fileID: 1483592881292801627, guid: 01f8a697727b77e44ad2b28c170a5290, type: 3}
+    - {fileID: 1483592881292801627, guid: 01f8a697727b77e44ad2b28c170a5290, type: 3}
+    - {fileID: 1483592881292801627, guid: 01f8a697727b77e44ad2b28c170a5290, type: 3}
+    - {fileID: 1483592881292801627, guid: 01f8a697727b77e44ad2b28c170a5290, type: 3}
+    - {fileID: 1483592881292801627, guid: 01f8a697727b77e44ad2b28c170a5290, type: 3}
+    - {fileID: 1483592881292801627, guid: 01f8a697727b77e44ad2b28c170a5290, type: 3}
+    - {fileID: 1483592881292801627, guid: 01f8a697727b77e44ad2b28c170a5290, type: 3}
+    - {fileID: 1483592881292801627, guid: 01f8a697727b77e44ad2b28c170a5290, type: 3}
+    timeToNextEnemy: 1
+    timeToNextWave: 10
+    useRandomSpawnPoints: 1
+    randomSpawnRadius: 9
     enemiesLeft: 0
   autoStart: 1
   enableDifficultyScaling: 1
@@ -400,7 +444,13 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7ce38cd6c2361e54f8d0192a5560e08f, type: 2}
   - {fileID: 11400000, guid: ccfcd481299522543ac9ba0df8ea8a08, type: 2}
   upgradesPerSelection: 3
-  playerPoints: 100000
+  playerPoints: 100
+  pointsPerKill: 20
+  currentKills: 0
+  totalKills: 0
+  killsRequiredForUpgrade: 01000000030000000400000005000000070000000a0000000d0000000f000000140000001e0000002800000032000000
+  currentKillThresholdIndex: 0
+  experienceProgress: 0
   testUpgradeKey: 117
 --- !u!114 &828843186 stripped
 MonoBehaviour:
@@ -811,6 +861,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1031814106200190941, guid: 7c0ecbb7a840d034b85879927378109d,
+        type: 3}
+      propertyPath: duration
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 2943599931092486283, guid: 7c0ecbb7a840d034b85879927378109d,
         type: 3}
       propertyPath: m_Name
@@ -1288,4 +1343,3 @@ SceneRoots:
   - {fileID: 7793140961694555208}
   - {fileID: 3185313275569703044}
   - {fileID: 1344100153}
-  - {fileID: 7793140961694555208}
