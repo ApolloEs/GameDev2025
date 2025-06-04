@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b4f485acd06f214094342e68ba855fc, type: 3}
   m_Name: PlayerRegenAmountUpgrade
   m_EditorClassIdentifier: 
-  upgradeName: Time Slow Factor Upgrade
-  description: Makes time faster when in slow zones
+  upgradeName: Regen Amount Upgrade
+  description: You gain more health each regen tick
   icon: {fileID: 0}
   cost: 100
-  upgradeType: 3
+  upgradeType: 5
   upgradeAmount: 10
   maxUpgradeValue: 100
   maxJumpForce: 8

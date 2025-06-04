@@ -196,6 +196,13 @@ public class ZombieStateMachine : MonoBehaviour
 
         ResetAllTriggers();
         animator.SetTrigger(fallForward ? "fallforward" : "fallback");
+
+        // Find the wave spawner and decrement enemy count
+        WaveSpawner waveSpawner = FindObjectOfType<WaveSpawner>();
+        if (waveSpawner != null) ;
+        {
+            waveSpawner.OnEnemyDeath();
+        }
     }
 
     public static Vector3 RandomNavSphere(Vector3 origin, float dist, int layermask)

@@ -46,7 +46,7 @@ public class WeaponUpgrade : Upgrade
                         {
                             float currentFireRate = (float)fireRateField.GetValue(weapon);
                             // Lower value = faster fire rate
-                            float newFireRate = Mathf.Max(0.05f, currentFireRate - upgradeAmount / 100);
+                            float newFireRate = Mathf.Max(0.05f, currentFireRate + upgradeAmount);
                             fireRateField.SetValue(weapon, newFireRate);
                             Debug.Log($"Upgraded {weapon.name} fire rate. New rate: {newFireRate}");
                         }    
