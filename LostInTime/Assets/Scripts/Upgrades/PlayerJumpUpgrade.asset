@@ -19,4 +19,4 @@ MonoBehaviour:
   upgradeType: 2
   upgradeAmount: 10
   maxUpgradeValue: 100
-  maxJumpForce: 8
+  maxJumpForce: 12
