@@ -141,5 +141,11 @@ namespace AdvancedShooterKit
             Time.timeScale = 1f;
             SceneManager.LoadScene( "Scene", LoadSceneMode.Single );
         }
+
+        public void LoadScene(string sceneindex)
+        {
+            Time.timeScale = 1f;
+            SceneManager.LoadScene(sceneindex, LoadSceneMode.Single);
+        }
     }
 }
