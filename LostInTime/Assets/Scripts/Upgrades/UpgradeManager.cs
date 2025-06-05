@@ -9,8 +9,6 @@ public class UpgradeManager : MonoBehaviour
     [SerializeField] private int upgradesPerSelection = 3;
     [SerializeField] private int playerPoints = 0;
 
-<<<<<<< Updated upstream
-=======
     [Header("Experience System")]
     [SerializeField] private int pointsPerKill = 50;
     [SerializeField] private int currentKills = 0;
@@ -22,7 +20,6 @@ public class UpgradeManager : MonoBehaviour
     [Header("UI")]
     [SerializeField] private UpgradeSelectionUI upgradeSelectionUI;
 
->>>>>>> Stashed changes
     [Header("Testing")]
     [SerializeField] private KeyCode testUpgradeKey = KeyCode.U;
 
