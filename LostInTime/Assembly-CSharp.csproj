@@ -65,6 +65,8 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.0.37f1-x86_64\Editor\Data\Tools\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Unity UI Samples\Scripts\PanelManager.cs" />
+    <Compile Include="Assets\Unity UI Samples\Scripts\ChangeColor.cs" />
     <Compile Include="Assets\VictorsAssets\AdvancedShooterKit\Scripts\Runtime\Utils\ASKMath.cs" />
     <Compile Include="Assets\Scripts\Player\TimeEffects\TimeEffectManager.cs" />
     <Compile Include="Assets\Scripts\Upgrades\WeaponUpgrade.cs" />
@@ -73,6 +75,7 @@
     <Compile Include="Assets\Scripts\Player\TimeEffects\TimeGrenade.cs" />
     <Compile Include="Assets\VictorsAssets\AdvancedShooterKit\Scripts\Runtime\Effects\HitEffect.cs" />
     <Compile Include="Assets\Scripts\Player\TimeEffects\TimeEffectZone.cs" />
+    <Compile Include="Assets\Unity UI Samples\Scripts\ApplicationManager.cs" />
     <Compile Include="Assets\VictorsAssets\AdvancedShooterKit\Scripts\Runtime\Input\InputSettings.cs" />
     <Compile Include="Assets\Scripts\Enemies\ZombieStateMachine.cs" />
     <Compile Include="Assets\Scripts\Enemies\AutoDestroy.cs" />
@@ -82,6 +85,7 @@
     <Compile Include="Assets\VictorsAssets\AdvancedShooterKit\Content\_DemoScene\Scripts\ControlsHelper.cs" />
     <Compile Include="Assets\VictorsAssets\AdvancedShooterKit\Scripts\Runtime\GUI\Menu\DropdownElement.cs" />
     <Compile Include="Assets\Scripts\Enemies\ZombieDamageHandler.cs" />
+    <Compile Include="Assets\Scripts\UI\UpgradeOptionUI.cs" />
     <Compile Include="Assets\Scripts\Enemies\Enemy.cs" />
     <Compile Include="Assets\Scripts\Player\TimeEffects\SlowTimeEffect.cs" />
     <Compile Include="Assets\VictorsAssets\AdvancedShooterKit\Scripts\Runtime\Gameplay\NPC\Character.cs" />
@@ -97,10 +101,13 @@
     <Compile Include="Assets\VictorsAssets\AdvancedShooterKit\Scripts\Runtime\Utils\LevelCache.cs" />
     <Compile Include="Assets\VictorsAssets\AdvancedShooterKit\Scripts\Runtime\Gameplay\Respawner.cs" />
     <Compile Include="Assets\VictorsAssets\AdvancedShooterKit\Scripts\Runtime\GameData\GameSettings.cs" />
+    <Compile Include="Assets\Unity UI Samples\Scripts\ShowSliderValue.cs" />
     <Compile Include="Assets\Scripts\Player\TimeEffects\ITimeEffect.cs" />
     <Compile Include="Assets\VictorsAssets\AdvancedShooterKit\Scripts\Runtime\Effects\Shell.cs" />
     <Compile Include="Assets\VictorsAssets\AdvancedShooterKit\Scripts\Runtime\Gameplay\Player\Animation\FirstPersonWeaponSway.cs" />
     <Compile Include="Assets\VictorsAssets\AdvancedShooterKit\Scripts\Runtime\Gameplay\Player\Controllers\FirstPersonController.cs" />
+    <Compile Include="Assets\Unity UI Samples\Scripts\ResizePanel.cs" />
+    <Compile Include="Assets\Unity UI Samples\Scripts\TiltWindow.cs" />
     <Compile Include="Assets\Scripts\Upgrades\UpgradeManager.cs" />
     <Compile Include="Assets\VictorsAssets\AdvancedShooterKit\Scripts\Runtime\Gameplay\Player\PlayerCharacter.cs" />
     <Compile Include="Assets\VictorsAssets\AdvancedShooterKit\Scripts\Runtime\GameData\EmptyMono.cs" />
@@ -114,28 +121,60 @@
     <Compile Include="Assets\VictorsAssets\AdvancedShooterKit\Scripts\Runtime\Utils\ASKDebug.cs" />
     <Compile Include="Assets\Scripts\Enemies\Enemy_Chase.cs" />
     <Compile Include="Assets\Scripts\Player\TimeManipulator.cs" />
+    <Compile Include="Assets\Unity UI Samples\Scripts\DragMe.cs" />
     <Compile Include="Assets\VictorsAssets\AdvancedShooterKit\Scripts\Runtime\Interfaces\IShell.cs" />
+    <Compile Include="Assets\Unity UI Samples\Scripts\DropMe.cs" />
     <Compile Include="Assets\VictorsAssets\AdvancedShooterKit\Scripts\Runtime\Effects\FootstepSFXManager.cs" />
     <Compile Include="Assets\Scripts\Enemies\ZombieCharacter.cs" />
     <Compile Include="Assets\VictorsAssets\AdvancedShooterKit\Scripts\Runtime\Interfaces\IProjectile.cs" />
+    <Compile Include="Assets\Unity UI Samples\Scripts\ActiveStateToggler.cs" />
+    <Compile Include="Assets\Unity UI Samples\Scripts\DragPanel.cs" />
     <Compile Include="Assets\VictorsAssets\AdvancedShooterKit\Scripts\Runtime\Gameplay\Combat\Projectile.cs" />
     <Compile Include="Assets\Scripts\Enemies\WaveSpawner.cs" />
     <Compile Include="Assets\Scripts\Upgrades\Upgrade.cs" />
     <Compile Include="Assets\VictorsAssets\AdvancedShooterKit\Content\_DemoScene\Scripts\SecureCam.cs" />
+    <Compile Include="Assets\Unity UI Samples\Scripts\ScrollDetailTexture.cs" />
     <Compile Include="Assets\Scripts\Enemies\ZombieAttack.cs" />
     <Compile Include="Assets\VictorsAssets\AdvancedShooterKit\Scripts\Runtime\GUI\Menu\MenuElements.cs" />
     <Compile Include="Assets\VictorsAssets\AdvancedShooterKit\Scripts\Runtime\Gameplay\Player\Animation\BodyAnimator.cs" />
     <Compile Include="Assets\VictorsAssets\AdvancedShooterKit\Scripts\Runtime\Gameplay\Combat\DamagePoint.cs" />
     <Compile Include="Assets\VictorsAssets\AdvancedShooterKit\Scripts\Runtime\Utils\EventHandler.cs" />
     <Compile Include="Assets\VictorsAssets\AdvancedShooterKit\Scripts\Runtime\Gameplay\Player\Climbing\Ladder.cs" />
+    <Compile Include="Assets\Scripts\UI\UpgradeSelectionUI.cs" />
     <Compile Include="Assets\Scripts\Upgrades\PlayerUpgrade.cs" />
     <Compile Include="Assets\VictorsAssets\AdvancedShooterKit\Scripts\Runtime\Weapon\Melee.cs" />
     <Compile Include="Assets\VictorsAssets\AdvancedShooterKit\Scripts\Runtime\GUI\Hud\HudElements.cs" />
     <Compile Include="Assets\VictorsAssets\AdvancedShooterKit\Scripts\Runtime\Gameplay\Player\Inventory\Pickup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile-2-Pass.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
+    <None Include="Assets\Unity UI Samples\Textures and Sprites\SF UI\Background\LICENSE.txt" />
     <None Include="Assets\VictorsAssets\AdvancedShooterKit\Content\_DemoScene\ReadMeToo.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
+    <None Include="Assets\Unity UI Samples\Materials\UI-Default-No-Alpha.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\VictorsAssets\AdvancedShooterKit\Changelog.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\SDFFunctions.hlsl" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
+    <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+    <None Include="Assets\Unity UI Samples\Fonts\Jupiter\LICENSE.txt" />
+    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

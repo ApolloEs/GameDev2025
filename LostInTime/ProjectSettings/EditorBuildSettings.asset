@@ -6,5 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/VictorsAssets/AdvancedShooterKit/Content/_DemoScene/Scene.unity
+    path: Assets/Scenes/MenuScene.unity
+    guid: fa3a4d9c6f427074fb76530296e7a876
+  - enabled: 1
+    path: Assets/Scenes/Scene.unity
     guid: 824b1b2291e867f43b7439f6b2334269
+  m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0
