@@ -9,6 +9,20 @@ public class UpgradeManager : MonoBehaviour
     [SerializeField] private int upgradesPerSelection = 3;
     [SerializeField] private int playerPoints = 0;
 
+<<<<<<< Updated upstream
+=======
+    [Header("Experience System")]
+    [SerializeField] private int pointsPerKill = 50;
+    [SerializeField] private int currentKills = 0;
+    [SerializeField] private int totalKills = 0;
+    [SerializeField] private int[] killsRequiredForUpgrade = new int[] { 1, 3, 4, 5, 7, 10, 13, 15, 20, 30, 40, 50 };
+    [SerializeField] private int currentKillThresholdIndex = 0;
+    [SerializeField] private float experienceProgress = 0f; // 0-1 for UI display
+
+    [Header("UI")]
+    [SerializeField] private UpgradeSelectionUI upgradeSelectionUI;
+
+>>>>>>> Stashed changes
     [Header("Testing")]
     [SerializeField] private KeyCode testUpgradeKey = KeyCode.U;
 
@@ -42,33 +56,33 @@ public class UpgradeManager : MonoBehaviour
         // For now log the options and select a random one
         List<Upgrade> options = GetRandomUpgrades(upgradesPerSelection);
 
-        Debug.Log("==UPGRADE OPTIONS===");
-        for (int i = 0; i < options.Count; i++)
-        {
-            Debug.Log($"{i + 1}. {options[i].upgradeName}: {options[i].description} (Cost: {options[i].cost})");
-        }
-
-        // Simulate selecting the first option
         if (options.Count > 0)
         {
-            ApplyUpgrade(options[0]);
+            if (upgradeSelectionUI != null)
+            {
+                // Show the UI
+                upgradeSelectionUI.ShowUpgradeOptions(options);
+            }
+            else
+            {
+                // Fallback
+                Debug.LogWarning("UpgradeSelectionUI not assigned, using random selection");
+                ApplyUpgrade(options[0]);
+            }
         }
+    }
+
+    public void ApplySelectedUpgrade(Upgrade upgrade)
+    {
+        ApplyUpgrade(upgrade);
     }
 
     private void ApplyUpgrade(Upgrade upgrade)
     {
-        if (playerPoints >= upgrade.cost)
-        {
-            playerPoints -= upgrade.cost;
-            upgrade.ApplyUpgrade(playerObject);
-            appliedUpgrades.Add(upgrade);
+        upgrade.ApplyUpgrade(playerObject);
+        appliedUpgrades.Add(upgrade);
 
-            Debug.Log($"Applied upgrade: {upgrade.upgradeName}");
-        }
-        else
-        {
-            Debug.Log("Not enough points for this upgrade!");
-        }
+        Debug.Log($"Applied upgrade: {upgrade.upgradeName}");
     }
 
     private List<Upgrade> GetRandomUpgrades(int count)
