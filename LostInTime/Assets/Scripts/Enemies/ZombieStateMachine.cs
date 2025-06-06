@@ -30,10 +30,10 @@ public class ZombieStateMachine : MonoBehaviour
     private bool isSlowed = false;
 
 
-    void Start()
+    void Awake()
     {
-        agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
+        agent = GetComponent<NavMeshAgent>();
         agent.stoppingDistance = 0.2f;
         currentState = ZombieState.Wander;
         timer = wanderTimer;
@@ -199,7 +199,7 @@ public class ZombieStateMachine : MonoBehaviour
 
         // Find the wave spawner and decrement enemy count
         WaveSpawner waveSpawner = FindObjectOfType<WaveSpawner>();
-        if (waveSpawner != null) ;
+        if (waveSpawner != null)
         {
             waveSpawner.OnEnemyDeath();
         }

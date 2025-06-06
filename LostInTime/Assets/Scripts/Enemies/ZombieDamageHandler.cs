@@ -125,21 +125,24 @@ public class ZombieDamageHandler : DamageHandler
 
         // If using NavMeshAgent, disable it to stop movement
         if (zombie != null)
-        zombie.enabled = false;
+            zombie.enabled = false;
 
         // Optionally disable collider so it doesn't block the player
-        Collider col = GetComponent<Collider>();
-        if (col != null)
+        Collider[] colliders = GetComponentsInChildren<Collider>();
+        foreach (Collider col in colliders)
+        {
             col.enabled = false;
+        }
 
         // Start despawn timer
-        StartCoroutine(DespawnCoroutine());
+            StartCoroutine(DespawnCoroutine());
     }
 
     private IEnumerator DespawnCoroutine()
     {
+        Debug.Log("Zombie will despawn in 3 seconds.");
         yield return new WaitForSeconds(3f);
-        Destroy(gameObject); // Or return to pool if using object pooling
+        Destroy(transform.root.gameObject); // Or return to pool if using object pooling
     }
 
 }

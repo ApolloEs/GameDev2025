@@ -264,13 +264,13 @@ namespace AdvancedShooterKit
             float distance = direction.magnitude;
             direction.Normalize();
 
-            if (Physics.Raycast(currentPosition, direction, out hitInfo, distance, m_HitMask) && hitInfo.collider.isTrigger == false)
+            if (Physics.Raycast(currentPosition, direction, out hitInfo, distance, m_HitMask) && !hitInfo.collider.isTrigger)
             {
                 hitSurface = hitInfo.GetSurface();
                 Impact(direction);
-                Physics.Raycast(currentPosition, direction, out hitInfo, distance, m_HitMask);
                 return;
             }
+
 
             //Debug.DrawLine( m_Transform.position, nextPosition, Color.yellow );
             m_Transform.position = nextPosition;

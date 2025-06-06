@@ -1,4 +1,4 @@
-﻿/********************************************
+/********************************************
  * Copyright(c): 2018 Victor Klepikov       *
  *                                          *
  * Profile: 	 http://u3d.as/5Fb		    *
@@ -684,15 +684,16 @@ namespace AdvancedShooterKit
             return -1;
         }
 
+
         // GetNames
         public string[] GetNames()
         {
-            string[] names = new string[ size ];
+            string[] names = new string[size];
 
-            for( int i = 0; i < names.Length; i++ )
+            for (int i = 0; i < names.Length; i++)
             {
-                var weap = weapons[ i ].weapon;
-                names[ i ] = ( weap != null ) ? weap.name : string.Empty;
+                var weap = weapons[i].weapon;
+                names[i] = (weap != null) ? weap.name : string.Empty;
             }
 
             return names;
