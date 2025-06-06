@@ -156,6 +156,7 @@
     <None Include="Assets\VictorsAssets\AdvancedShooterKit\Content\_DemoScene\ReadMeToo.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
     <None Include="Assets\Unity UI Samples\Materials\UI-Default-No-Alpha.shader" />
+    <None Include="Assets\Horror post apocalypse Sound Free\license pack.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\VictorsAssets\AdvancedShooterKit\Changelog.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\SDFFunctions.hlsl" />
