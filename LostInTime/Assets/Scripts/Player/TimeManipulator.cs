@@ -107,15 +107,17 @@ public class TimeManipulator : MonoBehaviour
             }
         }
 
-        // Check for input (O key)
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            StartCoroutine(SlowTimeNow());
-        }
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            ResetTimeScale();
-        }
+
+        // // // Test functions
+        // // Check for input (O key)
+        // if (Input.GetKeyDown(KeyCode.O))
+        // {
+        //     StartCoroutine(SlowTimeNow());
+        // }
+        // if (Input.GetKeyDown(KeyCode.L))
+        // {
+        //     ResetTimeScale();
+        // }
     }
 
 

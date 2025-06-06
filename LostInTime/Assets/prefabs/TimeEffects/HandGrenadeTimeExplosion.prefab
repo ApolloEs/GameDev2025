@@ -29248,12 +29248,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 5
+  timeScale: 0.4
   duration: 10
   fadeInTime: 0.5
   fadeOutTime: 0.5
+  checkInterval: 0.2
+  timeEffect: {fileID: 0}
   zoneMaterial: {fileID: 2100000, guid: 73e079d997b21794089183b34dbfc547, type: 2}
   zoneColor: {r: 0.5, g: 0.8, b: 1, a: 0.2}
-  startSound: {fileID: 0}
+  startSound: {fileID: 8300000, guid: 652004ea2317fe74eb031c4c430581d8, type: 3}
   loopSound: {fileID: 0}
   endSound: {fileID: 0}
   timeZonePrefab: {fileID: 2943599931092486283, guid: 7c0ecbb7a840d034b85879927378109d,
