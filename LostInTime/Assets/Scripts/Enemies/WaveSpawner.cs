@@ -270,7 +270,7 @@ public class WaveSpawner : MonoBehaviour
         {
             return defaultSpawnPoint;
         }
-
+        
         // Select a spawn point
         return spawnPoints[Random.Range(0, spawnPoints.Length)];
     }
