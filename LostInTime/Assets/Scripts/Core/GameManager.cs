@@ -2,6 +2,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using AdvancedShooterKit;
 
+
+
 //TEMPORARY UI manager stub
 public class UIManager
 {
@@ -42,6 +44,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
