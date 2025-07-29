@@ -13,7 +13,7 @@ Developed as a **team project**, focused on AI enemy behaviors, pathfinding, and
 
 ## 🖼️ Screenshot
 
-> If the image doesn't load, [view it on Itch.io](https://ohestisgames.itch.io/lost-in-time)
+> If the image doesn't load, [view it on Itch.io](https://ohestisgames.itch.io/lostintime)
 
 ![Gameplay](https://img.itch.zone/aW1nLzIyMjk1MDU1LnBuZw==/original/K8naqA.png)
 
@@ -52,7 +52,7 @@ Developed as a **team project**, focused on AI enemy behaviors, pathfinding, and
 
 ## 🎮 Play It
 
-👉 [Play Lost in Time on Itch.io](https://ohestisgames.itch.io/lost-in-time)
+👉 [Play Lost in Time on Itch.io](https://ohestisgames.itch.io/lostintime)
 
 ---
 
